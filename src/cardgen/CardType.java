@@ -72,6 +72,6 @@ public enum CardType {
     }
 
     public String getFullName() {
-        return suit.getName() + "_" + name;
+        return suit.getName() + (suit != Suit.NONE ? "_" : "")  + name;
     }
 }

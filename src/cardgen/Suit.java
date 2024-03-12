@@ -1,10 +1,10 @@
 package cardgen;
 
 public enum Suit {
-    CLUB("club"),
-    DIAMOND("diamond"),
-    HEART("heart"),
-    SPADE("spade"),
+    CLUB("clubs"),
+    DIAMOND("diamonds"),
+    HEART("hearts"),
+    SPADE("spades"),
     NONE("");
 
     private final String name;

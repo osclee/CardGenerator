@@ -13,14 +13,25 @@ public class CardGenerator {
 
         System.out.println("Welcome to Card Generator.");
 
-        System.out.println("Enter image path for the front of your card");
-        frontImagePath = reader.readLine();
+        if (args.length > 0) {
+            System.out.println("Program started with arguments");
+            if (args.length < 3) {
+                System.err.println("Not enough arguments, please re-run program with 3 arguments. Exiting...");
+                return;
+            }
+            frontImagePath = args[0];
+            backImagePath = args[1];
+            destinationFolder = args[2];
+        } else {
+            System.out.println("Enter image path for the front of your card");
+            frontImagePath = reader.readLine();
 
-        System.out.println("Enter image path for the back of your card");
-        backImagePath = reader.readLine();
+            System.out.println("Enter image path for the back of your card");
+            backImagePath = reader.readLine();
 
-        System.out.println("Enter destination folder for images to be saved");
-        destinationFolder = reader.readLine();
+            System.out.println("Enter destination folder for images to be saved");
+            destinationFolder = reader.readLine();
+        }
 
         Generate gen = new Generate(frontImagePath, backImagePath, destinationFolder);
 
@@ -29,7 +40,9 @@ public class CardGenerator {
 
         System.out.println("Saving Images");
         gen.save();
+        String PURPLE = "\033[0;35m";  // PURPLE
 
-        System.out.println("Done. Images saved to: " + destinationFolder);
+
+        System.out.println(PURPLE + "Images saved to: " + destinationFolder);
     }
 }

@@ -79,7 +79,7 @@ public class Generate {
         BufferedImage newImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g2 = newImage.createGraphics();
         g2.drawImage(cardType.getSuit() != Suit.NONE ? frontImage : backImage, 0, 0, width, height, null);
-        g2.drawImage(suit, width / 2, width / 2, width / 6, height / 6, null);
+        g2.drawImage(suit, (width / 5) * 2, width / 2, width / 6, height / 6, null);
         g2.drawString(cardType.getName(), 10, 10);
         g2.drawString(cardType.getName(), width - 50, height - 50);
         g2.dispose();
